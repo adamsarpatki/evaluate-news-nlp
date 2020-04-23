@@ -4,6 +4,7 @@ function handleSubmit(event) {
     // check what text was put into the form field
     let url = document.getElementById('url').value
     console.log(url)
+    Client.checkURL(url)
     fetch(`http://localhost:8081/test?url=${url}`)
     .then(res => res.json())
     .then(function(res) {
