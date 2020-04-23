@@ -1,5 +1,6 @@
+// A function to check whether input URL is valid or not
 function checkURL(inputURL) {
-    const expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+    const expression = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
     const regex = new RegExp(expression);
     let url = inputURL;
 
