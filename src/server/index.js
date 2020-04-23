@@ -17,6 +17,10 @@ const mockAPIResponse = require('./mockAPI.js')
 
 const app = express()
 
+// Cors for cross origin allowance
+const cors = require('cors');
+app.use(cors());
+
 app.use(express.static('dist'))
 
 console.log(__dirname)
@@ -31,12 +35,12 @@ app.listen(8081, function () {
     console.log('Example app listening on port 8081!')
 })
 
-/* app.get('/test', function (req, res) {
+app.get('/test', function (req, res) {
     textapi.sentiment({
-        'text': 'John is a very good football player!'
-      }, function(error, response) {
+        'url': req.query.url
+      }, function(error, apiResponse) {
         if (error === null) {
-          console.log(response);
+          res.send({data: apiResponse})
         }
       });
-}) */
+})

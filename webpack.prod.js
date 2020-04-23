@@ -11,6 +11,10 @@ module.exports = {
     entry: './src/client/index.js',
     mode: 'production',
     optimization: { minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})], },
+    output: {
+        libraryTarget: 'var',
+        library: 'Client'
+    },
     module: {
         rules: [
             {
