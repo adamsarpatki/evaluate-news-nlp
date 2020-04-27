@@ -13,8 +13,6 @@ var textapi = new aylien({
 
 var path = require('path')
 const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
-
 const app = express()
 
 // Cors for cross origin allowance

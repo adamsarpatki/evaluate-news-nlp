@@ -7,7 +7,7 @@ function checkURL(inputURL) {
     if (url.match(regex)) {
         return url;
     } else {
-        alert("Not valid URL.");
+        return false;
     }
 }
 
